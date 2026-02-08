@@ -1,0 +1,62 @@
+{
+  "$schema": "./zowe.schema.json",
+  "profiles": {
+    "project_base": {
+      "type": "base",
+      "properties": {
+        "host": "ZOS.KCTR.MARIST.EDU",
+        "rejectUnauthorized": false
+      },
+      "secure": [
+        "user",
+        "password"
+      ]
+    },
+
+    "zosmf": {
+      "type": "zosmf",
+      "properties": {
+        "port": 10443,
+        "basePath": "",
+        "rejectUnauthorized": false
+      },
+      "secure": [
+        "user",
+        "password"
+      ]
+    },
+
+    "tso": {
+      "type": "tso",
+      "properties": {
+        "account": "",
+        "codePage": "1047",
+        "logonProcedure": "IZUFPROC"
+      },
+      "secure": [
+        "user",
+        "password"
+      ]
+    },
+
+    "ssh": {
+      "type": "ssh",
+      "properties": {
+        "port": 22
+      },
+      "secure": [
+        "user",
+        "password"
+      ]
+    }
+  },
+
+  "defaults": {
+    "base": "project_base",
+    "zosmf": "zosmf",
+    "tso": "tso",
+    "ssh": "ssh"
+  },
+
+  "autoStore": true
+}
